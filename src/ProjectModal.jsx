@@ -38,11 +38,29 @@
             }}
         >
             <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
-            <h3 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>{project.title}</h3>
-            <button className="btn-ghost" onClick={onClose}>Close</button>
+            <h3 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>
+                {project.title}
+            </h3>
+            <button className="btn-ghost" onClick={onClose}>
+                Close
+            </button>
             </div>
 
-            <p style={{ opacity: 0.9, marginTop: 10, lineHeight: 1.4 }}>{project.blurb}</p>
+            {/* Show writeup if present; otherwise fall back to blurb.
+                Preserve newlines and allow scrolling for long content. */}
+            <div
+            style={{
+                opacity: 0.9,
+                marginTop: 10,
+                fontSize: 14,
+                lineHeight: 1.5,
+                whiteSpace: "pre-line",
+                maxHeight: "45vh",
+                overflow: "auto",
+            }}
+            >
+            {project.writeup ?? project.blurb}
+            </div>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
             {project.tech?.map((t) => (
@@ -61,17 +79,19 @@
             ))}
             </div>
 
+            {project.link && (
             <div style={{ marginTop: 16 }}>
-            <a
+                <a
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ghost"
                 style={{ textDecoration: "none", display: "inline-block" }}
-            >
+                >
                 View on GitHub
-            </a>
+                </a>
             </div>
+            )}
         </div>
         </div>
     );

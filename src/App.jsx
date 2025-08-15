@@ -210,7 +210,7 @@ function PlanetSystem({ radius = 120 }) {
         speed={0.2}
         size={2}
         orbitTilt={[THREE.MathUtils.degToRad(30), 0, 0]}
-        link="https://linkedin.com"
+        link="https://www.linkedin.com/in/harshal-jorwekar.com"
       />
       <SocialCube
         texturePath="/textures/twitter.jpg"
@@ -219,6 +219,14 @@ function PlanetSystem({ radius = 120 }) {
         size={2}
         orbitTilt={[THREE.MathUtils.degToRad(-30), 0, 0]}
         link="https://twitter.com"
+      />
+      <SocialCube
+        texturePath="/textures/Resume.jpg"
+        orbitRadius={10}
+        speed={0.12}
+        size={2}
+        orbitTilt={[THREE.MathUtils.degToRad(-100), 0, 0]}
+        link="https://in.docworkspace.com/d/sIATGloGMAcKP_MQG?sa=601.1037"
       />
     </group>
   )

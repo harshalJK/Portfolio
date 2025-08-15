@@ -1,6 +1,5 @@
     // src/SectionsPanel.jsx
     import React, { useEffect } from "react";
-    import { PROJECTS } from "./projects";
 
     function PanelFrame({ title, onClose, children }) {
     // close on ESC
@@ -76,94 +75,52 @@
     if (panel === "about") {
         return (
         <PanelFrame title="About" onClose={onClose}>
-            <p style={{ opacity: 0.9, lineHeight: 1.5 }}>
-            Hi, I’m <b>Harshal Jorwekar</b>, a Software Engineer who loves building
-            fast, reliable systems and playful 3D interfaces. Recent work includes
-            a Sanskrit RAG system, a voice AI assistant, and this WebGL portfolio.
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+            I’m <b>Harshal Jorwekar</b>, a software engineer who likes building
+            reliable, high-performance systems end-to-end. I completed my M.S. in
+            Data Science at Northeastern University (Silicon Valley) and previously
+            shipped production software at FIS Global (’21–’23).
             </p>
-            <p style={{ opacity: 0.9, lineHeight: 1.5 }}>
-            I enjoy performance tuning, clean DX, and shipping production-ready
-            features end-to-end.
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+            Recent work spans a Retrieval-Augmented LLM for IAST-transliterated
+            Sanskrit (<i>“Sanskrita”</i>), a real-time multi-modal gesture
+            recognition system achieving <b>97.25%</b> accuracy with
+            <b> &lt;40&nbsp;ms</b> latency, a voice AI assistant, and this playful
+            WebGL/Three.js portfolio.
+            </p>
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+            I care about performance tuning, clean DX, and thoughtful UX—whether
+            that’s a crisp API, a resilient backend, or a shader that makes a scene
+            feel alive. My toolkit includes <b>Python</b>, <b>Java</b>,
+            <b> Node.js/React</b>, <b>FastAPI/Flask</b>, <b>.NET&nbsp;Core</b>,
+            <b> SQL/NoSQL</b>, <b>Docker/Kubernetes</b>, <b>AWS/GCP</b>,
+            <b> Kafka/Spark</b>, and <b>PyTorch</b>. I’m looking for roles across
+            backend, full-stack, platform/SRE, or ML engineering where I can ship
+            measurable impact and keep learning fast.
             </p>
         </PanelFrame>
         );
     }
 
     if (panel === "skills") {
-        const buckets = {
-        "Languages": ["Python", "JavaScript/TypeScript", "Java", "C++"],
-        "Frameworks": ["React", "FastAPI", "Node.js", "Flask"],
-        "Data/ML": ["PyTorch", "Faiss", "Whisper", "OpenAI APIs"],
-        "Infra": ["Docker", "Kubernetes", "AWS", "GitHub Actions"],
-        "DB & Search": ["PostgreSQL", "Redis", "Vector DB (FAISS/HNSW)"],
-        "WebGL": ["React Three Fiber", "GLSL shaders"],
-        };
-
         return (
         <PanelFrame title="Skills" onClose={onClose}>
-            <div style={{ display: "grid", gap: 10 }}>
-            {Object.entries(buckets).map(([k, v]) => (
-                <div key={k}>
-                <div style={{ fontWeight: 700, marginBottom: 6 }}>{k}</div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                    {v.map((t) => (
-                    <span key={t} className="pill">{t}</span>
-                    ))}
-                </div>
-                </div>
-            ))}
-            </div>
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+            Explore the system — the tiny satellites orbiting each planet are my
+            skill badges. Pan, rotate, and zoom to discover them.
+            </p>
         </PanelFrame>
         );
     }
 
     if (panel === "projects") {
-        const list = Object.entries(PROJECTS);
         return (
         <PanelFrame title="Projects" onClose={onClose}>
-            <div style={{ display: "grid", gap: 10 }}>
-            {list.map(([key, p]) => (
-                <div
-                key={key}
-                style={{
-                    padding: 12,
-                    borderRadius: 12,
-                    border: "1px solid rgba(255,255,255,0.14)",
-                    background: "rgba(255,255,255,0.05)",
-                    display: "grid",
-                    gap: 6,
-                }}
-                >
-                <div style={{ fontWeight: 700 }}>{p.title}</div>
-                <div style={{ opacity: 0.85, fontSize: 14, lineHeight: 1.4 }}>
-                    {p.blurb}
-                </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {p.tech.slice(0, 4).map((t) => (
-                    <span key={t} className="pill">{t}</span>
-                    ))}
-                </div>
-                <div style={{ display: "flex", gap: 8, marginTop: 6 }}>
-                    <button
-                    className="btn-ghost"
-                    onClick={() => onOpenProject?.(key)}
-                    title="Open detail modal"
-                    >
-                    Details
-                    </button>
-                    <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-ghost"
-                    style={{ textDecoration: "none" }}
-                    >
-                    GitHub
-                    </a>
-                </div>
-                </div>
-            ))}
-            </div>
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+            Tour the planets to explore my projects. Pan, rotate, and zoom through
+            the system — or use the name buttons along the bottom to teleport
+            straight to a planet.
+            </p>
         </PanelFrame>
         );
     }
@@ -171,18 +128,9 @@
     if (panel === "contact") {
         return (
         <PanelFrame title="Contact" onClose={onClose}>
-            <div style={{ display: "grid", gap: 10 }}>
-            <a className="btn-ghost" href="mailto:you@email.com">Email</a>
-            <a className="btn-ghost" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noreferrer">
-                LinkedIn
-            </a>
-            <a className="btn-ghost" href="https://github.com/yourname" target="_blank" rel="noreferrer">
-                GitHub
-            </a>
-            <a className="btn-ghost" href="/Harshal_Jorwekar_Resume.pdf" target="_blank" rel="noreferrer">
-                View Résumé (PDF)
-            </a>
-            </div>
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+            Swing by <b>Earth</b> to find my socials and contact links.
+            </p>
         </PanelFrame>
         );
     }
